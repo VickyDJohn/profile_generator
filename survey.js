@@ -16,3 +16,15 @@ const questions = [
   "Which sport is your absolute favourite?",
   "What is your superpower? In a few words, tell us what you are amazing at!"
 ];
+
+const askQuestion = (x) => {
+  rl.question(questions[x]) + ' ', (answer) => {
+    profile[questions[index]] = answer;
+    if (index < questions.length - 1) {
+      askQuestion(index + 1);
+    } else {
+      generateProfile();
+      rl.close();
+    }
+  };
+};
