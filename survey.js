@@ -18,15 +18,15 @@ const questions = [
 ];
 
 const askQuestion = (x) => {
-  rl.question(questions[x]) + ' ', (answer) => {
-    profile[questions[index]] = answer;
-    if (index < questions.length - 1) {
-      askQuestion(index + 1);
+  rl.question(questions[x] + ' ', (answer) => {
+    profile[questions[x]] = answer;
+    if (x < questions.length - 1) {
+      askQuestion(x + 1);
     } else {
       generateProfile();
       rl.close();
     }
-  };
+  });
 };
 
 const generateProfile = () => {
@@ -37,3 +37,5 @@ const generateProfile = () => {
   }
   console.log(text);
 };
+
+askQuestion(0)
