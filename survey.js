@@ -28,3 +28,12 @@ const askQuestion = (x) => {
     }
   };
 };
+
+const generateProfile = () => {
+  let text = "";
+  for (const question of questions) {
+    const answer = profile[question];
+    text += `${question}\n${answer}\n\n`;
+  }
+  console.log(text);
+};
